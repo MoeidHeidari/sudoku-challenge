@@ -1,0 +1,13 @@
+*
+!.babelrc
+!.env*
+!bootstrap.sh
+!jest*
+!__test__/
+!src/
+!scripts/
+!yarn-offline-mirror/
+!package.json
+!yarn.lock
+!.yarnrc
+!tsconfig*
