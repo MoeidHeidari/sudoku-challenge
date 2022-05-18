@@ -15,7 +15,7 @@ import {
 } from '@nestjs/common';
 import { HttpResponse } from '../../domain/interfaces';
 import { Public } from '../../domain/decorators';
-import { SudokuService } from '../../domain/services/isudoku.service';
+import { SudokuService } from '../../domain/services/sudoku.service';
 import { SudokuDTO } from '../dtos';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 /**

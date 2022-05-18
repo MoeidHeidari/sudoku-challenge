@@ -5,7 +5,7 @@
 import { CacheModule, Module } from '@nestjs/common';
 import { CommonModule } from '../../infrastructure/modules/common/common.module';
 import { SudokuController } from '../../application/controllers';
-import { SudokuService } from '../services/isudoku.service';
+import { SudokuService } from '../services/sudoku.service';
 /**
  * User module
  */
