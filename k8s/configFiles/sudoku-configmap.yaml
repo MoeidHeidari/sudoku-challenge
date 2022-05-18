@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sudoku-config
+  namespace: sudoku
+data:
+  NODE_PORT: "8085"
+  NODE_ENV: "production"
+  DECIMAL_PLACES: "3"

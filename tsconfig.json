@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES2020",
+      "moduleResolution": "Node",
+      "sourceMap": true,
+      "declaration": true,
+      "outDir": "./dist",
+      "esModuleInterop": true,
+      "strict": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "strictPropertyInitialization": false,
+      "skipLibCheck": true
+    },
+    "include": ["./src/**/*.ts", "__test__/controllers/health.controller.spec.ts"],
+    "exclude": ["node_modules"]
+  }
+  

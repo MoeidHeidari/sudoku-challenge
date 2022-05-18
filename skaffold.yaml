@@ -1,0 +1,28 @@
+
+apiVersion: skaffold/v2beta13
+kind: Config
+build:
+  local:
+    useBuildkit: true
+  artifacts:
+  - image: registry.gitlab.com/moeidtopcoder/sudoku
+deploy:
+  helm:
+    releases:
+    - name: app
+      chartPath: ./k8s
+      wait: false
+      useHelmSecrets: true
+      valuesFiles:
+      - ./k8s/values.yaml
+      - ./k8s/secrets.yaml
+      artifactOverrides:
+        image: registry.gitlab.com/moeidtopcoder/sudoku
+      imageStrategy:
+        helm: {}
+
+portForward:
+ - resourceType: service
+   resourceName: app
+   port: 7800
+   localPort: 7800

@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sudoku documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+        <link rel="stylesheet" href="./styles/readthedocs.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">Sudoku documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="sudoku-challenge">sudoku-challenge</h1>
+<h2 id="getting-started">Getting started</h2>
+<p>To make it easy for you to get started with GitLab, here&#39;s a list of recommended next steps.</p>
+<p>Already a pro? Just edit this README.md and make it your own. Want to make it easy? <a href="#editing-this-readme">Use the template at the bottom</a>!</p>
+<h2 id="add-your-files">Add your files</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file">Create</a> or <a href="https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file">upload</a> files</li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line">Add files using the command line</a> or push an existing Git repository with the following command:</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-none">cd existing_repo
+git remote add origin https://gitlab.com/Moeidtopcoder/sudoku-challenge.git
+git branch -M main
+git push -uf origin main</code></pre></div><h2 id="integrate-with-your-tools">Integrate with your tools</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="https://gitlab.com/Moeidtopcoder/sudoku-challenge/-/settings/integrations">Set up project integrations</a></li>
+</ul>
+<h2 id="collaborate-with-your-team">Collaborate with your team</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/project/members/">Invite team members and collaborators</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html">Create a new merge request</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically">Automatically close issues from merge requests</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/approvals/">Enable merge request approvals</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html">Automatically merge when pipeline succeeds</a></li>
+</ul>
+<h2 id="test-and-deploy">Test and Deploy</h2>
+<p>Use the built-in continuous integration in GitLab.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/ci/quick_start/index.html">Get started with GitLab CI/CD</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/application_security/sast/">Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/topics/autodevops/requirements.html">Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/user/clusters/agent/">Use pull-based deployments for improved Kubernetes management</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://docs.gitlab.com/ee/ci/environments/protected_environments.html">Set up protected environments</a></li>
+</ul>
+<hr>
+<h1 id="editing-this-readme">Editing this README</h1>
+<p>When you&#39;re ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to <a href="https://www.makeareadme.com/">makeareadme.com</a> for this template.</p>
+<h2 id="suggestions-for-a-good-readme">Suggestions for a good README</h2>
+<p>Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.</p>
+<h2 id="name">Name</h2>
+<p>Choose a self-explaining name for your project.</p>
+<h2 id="description">Description</h2>
+<p>Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.</p>
+<h2 id="badges">Badges</h2>
+<p>On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.</p>
+<h2 id="visuals">Visuals</h2>
+<p>Depending on what you are making, it can be a good idea to include screenshots or even a video (you&#39;ll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.</p>
+<h2 id="installation">Installation</h2>
+<p>Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.</p>
+<h2 id="usage">Usage</h2>
+<p>Use examples liberally, and show the expected output if you can. It&#39;s helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.</p>
+<h2 id="support">Support</h2>
+<p>Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.</p>
+<h2 id="roadmap">Roadmap</h2>
+<p>If you have ideas for releases in the future, it is a good idea to list them in the README.</p>
+<h2 id="contributing">Contributing</h2>
+<p>State if you are open to contributions and what your requirements are for accepting them.</p>
+<p>For people who want to make changes to your project, it&#39;s helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.</p>
+<p>You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.</p>
+<h2 id="authors-and-acknowledgment">Authors and acknowledgment</h2>
+<p>Show your appreciation to those who have contributed to the project.</p>
+<h2 id="license">License</h2>
+<p>For open source projects, say how it is licensed.</p>
+<h2 id="project-status">Project status</h2>
+<p>If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

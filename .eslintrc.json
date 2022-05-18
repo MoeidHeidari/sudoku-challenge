@@ -1,0 +1,38 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "prettier"],
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "prettier/@typescript-eslint"
+    ],
+    "globals": {
+      "process": true,
+      "console": true,
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "max-len": [
+        "error",
+        {
+          "code": 400,
+          "ignoreUrls": true,
+          "ignoreComments": false
+        }
+      ],
+      "no-unused-vars": 1,
+      "no-case-declarations": "off",
+      "no-async-promise-executor": "off"
+    }
+  }
