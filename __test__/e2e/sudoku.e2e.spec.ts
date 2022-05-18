@@ -3,14 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppModule } from '../../src/infrastructure/modules/app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import supertest from 'supertest';
-import {
-  TEST_GRID_1,
-  TEST_GRID_2,
-  TEST_GRID_3,
-  TEST_GRID_4,
-  TEST_GRID_5,
-  TEST_GRID_6,
-} from '../fcatory';
+import { TEST_GRID_1, TEST_GRID_2, TEST_GRID_3, TEST_GRID_4, TEST_GRID_5, TEST_GRID_6 } from '../fcatory';
 describe('GRID endpoints (e2e)', () => {
   let app: INestApplication;
   let request: ReturnType<typeof supertest>;
@@ -41,54 +34,31 @@ describe('GRID endpoints (e2e)', () => {
 
   describe('check Sudoko endpoints', () => {
     it('should receive status code 200', async () => {
-      return await request
-        .get('/api/v1/sudoku')
-        .expect(200)
-        .expect('Welcome to Sudoko solver endpoint');
+      return await request.get('/api/v1/sudoku').expect(200).expect('Welcome to Sudoko solver endpoint');
     });
     it('should return 400 bad request error', async () => {
-      return await request
-        .post('/api/v1/sudoku')
-        .send({grid:""})
-        .expect(400);
+      return await request.post('/api/v1/sudoku').send({ grid: '' }).expect(400);
     });
     it('should return 400 bad request error', async () => {
       return await request.post('/api/v1/sudoku').send().expect(400);
     });
 
     it('should return 200 Success request', async () => {
-      return await request
-        .post('/api/v1/sudoku')
-        .send({grid:TEST_GRID_1})
-        .expect(200);
+      return await request.post('/api/v1/sudoku').send({ grid: TEST_GRID_1 }).expect(200);
     });
     it('should return 200 Success request', async () => {
-      return await request
-        .post('/api/v1/sudoku')
-        .send({grid:TEST_GRID_2})
-        .expect(200);
+      return await request.post('/api/v1/sudoku').send({ grid: TEST_GRID_2 }).expect(200);
     });
     it('should return 200 Success request', async () => {
-      return await request
-        .post('/api/v1/sudoku')
-        .send({grid:TEST_GRID_3})
-        .expect(200);
+      return await request.post('/api/v1/sudoku').send({ grid: TEST_GRID_3 }).expect(200);
     });
 
-      it('should return 200 Success request', async () => {
-        return await request
-          .post('/api/v1/sudoku')
-          .send({grid:TEST_GRID_5})
-          .expect(200);
-      });
-      it('should return 200 Success request', async () => {
-        return await request
-          .post('/api/v1/sudoku')
-          .send({grid:TEST_GRID_6})
-          .expect(200);
-      });
-    
-    
+    it('should return 200 Success request', async () => {
+      return await request.post('/api/v1/sudoku').send({ grid: TEST_GRID_5 }).expect(200);
+    });
+    it('should return 200 Success request', async () => {
+      return await request.post('/api/v1/sudoku').send({ grid: TEST_GRID_6 }).expect(200);
+    });
   });
 
   afterEach(async () => {

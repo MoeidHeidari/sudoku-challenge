@@ -44,20 +44,20 @@ describe('sudoku service', () => {
     }).compile();
     service = module.get<SudokuService>(SudokuService);
   });
-  describe("sudoku calculation tests", () => {
-    it("should return a solved grid", async () => {
+  describe('sudoku calculation tests', () => {
+    it('should return a solved grid', async () => {
       const result = service.begin_to_solve(TEST_GRID_0);
 
       expect(await result).toHaveLength(9);
-    })
+    });
 
-    it("should return not solvable", async () => {
+    it('should return not solvable', async () => {
       const result = service.begin_to_solve(TEST_GRID_1);
 
       expect(await result).toEqual(false);
-    })
+    });
 
-    it("should return a solved grid", async () => {
+    it('should return a solved grid', async () => {
       const result = service.begin_to_solve(TEST_GRID_2);
 
       expect(await result).toEqual([
@@ -69,27 +69,26 @@ describe('sudoku service', () => {
         [5, 9, 3, 6, 1, 4, 8, 7, 2],
         [9, 1, 4, 8, 5, 7, 3, 2, 6],
         [8, 2, 7, 3, 6, 1, 5, 9, 4],
-        [3, 6, 5, 9, 4, 2, 1, 8, 7]
+        [3, 6, 5, 9, 4, 2, 1, 8, 7],
       ]);
-    })
+    });
 
-    it("should return a solved grid", async () => {
+    it('should return a solved grid', async () => {
       const result = service.begin_to_solve(TEST_GRID_3);
 
       expect(await result).toHaveLength(9);
-    })
+    });
 
-    it("should return a solved grid", async () => {
-      const result = service.check_if_can_be_used_in_Column(TEST_GRID_4,4,2);
-
-      expect(await result).toEqual(true);
-    })
-
-    it("should return a solved grid", async () => {
-      const result = service.check_if_can_be_used_in_Square(TEST_GRID_6,1,1,1);
+    it('should return a solved grid', async () => {
+      const result = service.check_if_can_be_used_in_Column(TEST_GRID_4, 4, 2);
 
       expect(await result).toEqual(true);
-    })
-  })
+    });
 
+    it('should return a solved grid', async () => {
+      const result = service.check_if_can_be_used_in_Square(TEST_GRID_6, 1, 1, 1);
+
+      expect(await result).toEqual(true);
+    });
+  });
 });

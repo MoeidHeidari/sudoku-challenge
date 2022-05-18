@@ -22,7 +22,6 @@ export class SudokuDTO {
   })
   grid: number[][];
 
-
   /**
    * get user DTO constructor
    * @param properties DTO properties
@@ -31,6 +30,5 @@ export class SudokuDTO {
     Object.keys(properties).forEach((key: string) => {
       if (allowedProperties.includes(key)) this[key as keyof this] = properties[key];
     });
-  
   }
 }

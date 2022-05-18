@@ -12,7 +12,7 @@ import { LoggerInterceptor } from '../../domain/interceptors';
 import { RolesGuard } from '../../domain/guards';
 import * as modules from '../../domain/modules';
 import { CommonModule } from './common/common.module';
-import { PrometheusModule } from "@willsoto/nestjs-prometheus";
+import { PrometheusModule } from '@willsoto/nestjs-prometheus';
 
 /**
  * application modules list
@@ -52,4 +52,4 @@ const modulesList = Object.keys(modules).map(moduleIndex => modules[moduleIndex 
   ],
   controllers: [],
 })
-export class AppModule { }
+export class AppModule {}

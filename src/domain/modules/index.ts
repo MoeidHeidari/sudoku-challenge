@@ -4,4 +4,4 @@
  */
 export * from './common';
 export * from './sudoku.module';
-export * from './health.module'
+export * from './health.module';

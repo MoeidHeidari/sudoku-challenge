@@ -10,7 +10,7 @@ import { SudokuService } from '../services/sudoku.service';
  * User module
  */
 @Module({
-  imports: [CommonModule,CacheModule.register(),],
+  imports: [CommonModule, CacheModule.register()],
   controllers: [SudokuController],
   providers: [SudokuService],
   exports: [SudokuService],

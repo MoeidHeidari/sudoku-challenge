@@ -28,7 +28,7 @@ async function bootstrap() {
    */
   const config = new DocumentBuilder()
     .setTitle('sudoku service')
-    .setDescription('A service to calculte IUO based on provided bounding boxes')
+    .setDescription('A service solve a provided 9x9 sudoku grid')
     .setVersion('1.0')
     .build();
 

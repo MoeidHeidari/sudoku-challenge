@@ -30,7 +30,7 @@ export class SudokuService {
     private readonly httpResponseService: HttpResponseService,
     private readonly configService: ConfigService,
     private readonly logger: LoggerService
-  ) { }
+  ) {}
   //===========================================================================================
   /**
    * Handles the Sudoku request
@@ -55,9 +55,8 @@ export class SudokuService {
    * @param ground_truth_bounding_box rows of the sudoku table
    * @returns 2d array
    */
-  async calculateSudoku(sudokuGrid: SudokuDTO
-  ): Promise<any> {
-    let grid = sudokuGrid.grid;
+  async calculateSudoku(sudokuGrid: SudokuDTO): Promise<any> {
+    const grid = sudokuGrid.grid;
     return await this.begin_to_solve(grid);
   }
   //================================================================================================================================
@@ -67,7 +66,7 @@ export class SudokuService {
    * @returns address of the empty cell.
    */
   async searchForEmptyCell(grid: number[][]): Promise<number[]> {
-    let emptyCellCoordinate = [-1, -1];
+    const emptyCellCoordinate = [-1, -1];
     for (let x = 0; x < grid.length; x++) {
       for (let y = 0; y < grid.length; y++) {
         if (grid[x][y] === 0) {
@@ -105,25 +104,23 @@ export class SudokuService {
    * @returns boolean
    */
   async check_if_can_be_used_in_Column(grid: number[][], column: number, value: number): Promise<boolean> {
-
     for (let y = 0; y < grid.length; y++) {
       if (grid[y][column] === value) {
         return true;
       }
-
     }
 
     return false;
   }
   //================================================================================================================================
   /**
-  * check is a specific value can be used in a 3x3 square
-  * @param grid provided grid
-  * @param row row to be checked
-  * @param column column to be checked
-  * @param value value to be used in the row
-  * @returns boolean
-  */
+   * check is a specific value can be used in a 3x3 square
+   * @param grid provided grid
+   * @param row row to be checked
+   * @param column column to be checked
+   * @param value value to be used in the row
+   * @returns boolean
+   */
   async check_if_can_be_used_in_Square(grid: number[][], row: number, column: number, value: number): Promise<boolean> {
     row -= row % 3;
     column -= column % 3;
@@ -138,24 +135,27 @@ export class SudokuService {
   }
   //================================================================================================================================
   /**
-   * 
+   *
    * @param grid provided grid
    * @param row row to be checked
-   * @param column 
-   * @param value 
-   * @returns 
+   * @param column
+   * @param value
+   * @returns
    */
   async check_correct_position(grid: number[][], row: number, column: number, value: number): Promise<boolean> {
-    return ! (await this.check_if_can_be_used_in_Column(grid, column, value)) && !(await this.check_if_can_be_used_in_row(grid, row, value)) && !(await this.check_if_can_be_used_in_Square(grid, row, column, value));
+    return (
+      !(await this.check_if_can_be_used_in_Column(grid, column, value)) &&
+      !(await this.check_if_can_be_used_in_row(grid, row, value)) &&
+      !(await this.check_if_can_be_used_in_Square(grid, row, column, value))
+    );
   }
   //================================================================================================================================
   /**
    * Begins to solve the Sudoku grid.
    * @param grid provided grid.
-   * @returns 
+   * @returns
    */
   async begin_to_solve(grid: number[][]): Promise<any> {
-
     const [row, column] = await this.searchForEmptyCell(grid);
     if (row === -1 && column === -1) {
       return true;
@@ -169,10 +169,7 @@ export class SudokuService {
         }
         grid[row][column] = 0;
       }
-
     }
     return false;
   }
-
-
 }

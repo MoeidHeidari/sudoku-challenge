@@ -14,19 +14,15 @@ export class HealthController {
    * @param health health check service
    * @param http http response
    */
-  constructor(
-    private health: HealthCheckService,
-    private http: HttpHealthIndicator,
-  ) {}
+  constructor(private health: HealthCheckService, private http: HttpHealthIndicator) {}
   //======================================================================================================
-    /**
-     * Checks the liveness of the project
-     * @returns http response
-     */
+  /**
+   * Checks the liveness of the project
+   * @returns http response
+   */
   @Get()
   @HealthCheck()
   check() {
-    return {"status":"ok","info":{"alive":{"status":"up"}},"error":{},"details":{"alive":{"status":"up"}}}
-    
+    return { status: 'ok', info: { alive: { status: 'up' } }, error: {}, details: { alive: { status: 'up' } } };
   }
 }
