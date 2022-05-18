@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: sudoku
+  name: sudoku
+  namespace: sudoku
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: sudoku
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: sudoku
+    spec:
+      containers:
+      - env:
+        - name: DIMENSION
+          valueFrom:
+            configMapKeyRef:
+              name: sudoku-config
+              key: DIMENSION
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: sudoku-config
+              key: NODE_ENV
+        - name: NODE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: sudoku-config
+              key: NODE_PORT
+        image: registry.gitlab.com/moeidtopcoder/sudoku:latest
+        imagePullPolicy: ""
+        name: sudoku
+        ports:
+        - containerPort: 8077
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

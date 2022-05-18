@@ -15,9 +15,9 @@ This script helps you to runn the application in different forms. below you can 
 Available options:
 
 -h, --help              Print this help and exit
--build_docker           Build the docker image called "intersection:latest"
+-build_docker           Build the docker image called "insudokutersection:latest"
 -build_and_run_docker   Build the docker image and run on local machine
--stop_docker            Stop running docker container named "intersection"
+-stop_docker            Stop running docker container named "sudoku"
 -run_app                Run application with npm in usual way for development
 -run_test               Run npm test
 -run_lint               Run npm lint

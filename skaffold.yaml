@@ -5,7 +5,7 @@ build:
   local:
     useBuildkit: true
   artifacts:
-  - image: registry.gitlab.com/moeidtopcoder/intersection-over-union
+  - image: registry.gitlab.com/moeidtopcoder/sudoku
 deploy:
   helm:
     releases:
@@ -17,7 +17,7 @@ deploy:
       - ./k8s/values.yaml
       - ./k8s/secrets.yaml
       artifactOverrides:
-        image: registry.gitlab.com/moeidtopcoder/intersection-over-union
+        image: registry.gitlab.com/moeidtopcoder/sudoku
       imageStrategy:
         helm: {}
 

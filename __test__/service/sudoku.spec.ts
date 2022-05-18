@@ -9,9 +9,9 @@ import { CommonModule } from '../../src/infrastructure/modules/common/common.mod
 import { HttpResponseService, LoggerService } from '../../src/domain/services/common';
 import { validate } from 'class-validator';
 import { TEST_GRID_0, TEST_GRID_1, TEST_GRID_2, TEST_GRID_3, TEST_GRID_4, TEST_GRID_6 } from '../fcatory';
-describe('intersection service', () => {
+describe('sudoku service', () => {
   /**
-   * Make an Instantiation from Intersection service.
+   * Make an Instantiation from Sudoku service.
    */
   let service: SudokuService;
   const config = new ConfigService();
@@ -38,7 +38,7 @@ describe('intersection service', () => {
           isGlobal: true,
           cache: false,
           expandVariables: true,
-          load: [() => ({ IntersectionOptions: { number_of_decimal_places: '3' } })],
+          load: [() => ({ SudokuOptions: { number_of_decimal_places: '3' } })],
         }),
       ],
     }).compile();

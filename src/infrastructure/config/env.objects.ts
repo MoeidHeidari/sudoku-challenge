@@ -10,17 +10,17 @@ expandEnvVariables();
  * options enum
  */
 export enum EnvObjects {
-  INTERSECTION_OPTIONS = 'IntersectionOptions',
+  SUDOKU_OPTIONS = 'SudokuOptions',
 }
 //===================================================================================================
 /**
- * Intersection options
+ * Sudoku options
  */
-export interface IntersectionOptions {
+export interface SudokuOptions {
   /**
-   * represents the number of decimal places to calculate and return back the muserment of intersection.
+   * represents the dimension of the sudoku.
    */
-  number_of_decimal_places: number;
+  dimenstion: number;
 }
 
 /**
@@ -28,7 +28,7 @@ export interface IntersectionOptions {
  * @returns configuration taken from env
  */
 export const configuration = (): any => ({
-  IntersectionOptions: {
-    number_of_decimal_places: process.env.DECIMAL_PLACES,
+  SudokuOptions: {
+    dimenstion: process.env.DIMENSION,
   },
 });

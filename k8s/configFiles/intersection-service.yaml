@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    io.kompose.service: sudoku
+  name: sudoku
+  namespace: sudoku
+spec:
+  ports:
+  - name: "8077"
+    port: 8077
+    targetPort: 8077
+  selector:
+    io.kompose.service: sudoku
+status:
+  loadBalancer: {}

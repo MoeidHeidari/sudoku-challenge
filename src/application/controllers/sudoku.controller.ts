@@ -19,14 +19,14 @@ import { SudokuService } from '../../domain/services/sudoku.service';
 import { SudokuDTO } from '../dtos';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 /**
- * Intersection controller
+ * Sudoku controller
  */
 @Controller('api/v1/sudoku')
 @UseInterceptors(CacheInterceptor)
 export class SudokuController {
   /**
    * Sudoku controller class constructor
-   * @param sudokuService Intersection service
+   * @param sudokuService Sudoku service
    */
   constructor(private readonly sudokuService: SudokuService) {}
 
@@ -44,7 +44,7 @@ export class SudokuController {
   @Get()
   @Public()
   async() {
-    return 'Welcome to Sudoko calculation endpoint';
+    return 'Welcome to Sudoko solver endpoint';
   }
   //===========================================================================================================================
   /**

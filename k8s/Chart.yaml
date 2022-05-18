@@ -1,0 +1,11 @@
+apiVersion: v2
+name: app
+description: A Helm chart for Sudoku service
+# This is the type of the chart being deployed.
+type: application
+
+# This is the chart version.
+version: 0.1.0
+
+# This is the version number of the application being deployed.
+appVersion: "1.1.0"

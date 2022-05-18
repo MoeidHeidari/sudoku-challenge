@@ -5,20 +5,20 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { SudokuDTO } from '../../application/dtos';
-import { EnvObjects, IntersectionOptions } from '../../infrastructure/config';
+import { EnvObjects, SudokuOptions } from '../../infrastructure/config';
 import { HttpResponseException } from '../exceptions';
 import { processHttpError, validateDTO, validateOutputDTO } from '../helpers';
 import { HttpResponse } from '../interfaces';
 import { HttpResponseService, LoggerService } from './common';
 /**
- * Intersection service
+ * Sudoku service
  */
 @Injectable()
 export class SudokuService {
   /**
    * Options for envs
    */
-  private options: any = this.configService.get<IntersectionOptions>(EnvObjects.INTERSECTION_OPTIONS);
+  private options: any = this.configService.get<SudokuOptions>(EnvObjects.SUDOKU_OPTIONS);
   //===========================================================================================
   /**
    * Constructor of the sudoku service class

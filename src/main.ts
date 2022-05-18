@@ -27,7 +27,7 @@ async function bootstrap() {
    * Configuration of the Swagger document
    */
   const config = new DocumentBuilder()
-    .setTitle('intersection service')
+    .setTitle('sudoku service')
     .setDescription('A service to calculte IUO based on provided bounding boxes')
     .setVersion('1.0')
     .build();
