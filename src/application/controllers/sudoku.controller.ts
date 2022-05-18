@@ -16,7 +16,7 @@ import {
 import { HttpResponse } from '../../domain/interfaces';
 import { Public } from '../../domain/decorators';
 import { SudokuService } from '../../domain/services/isudoku.service';
-import { SudokuResponseDTO, SudokuRequestDTO } from '../dtos';
+import { SudokuDTO } from '../dtos';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
 /**
  * Intersection controller
@@ -49,22 +49,22 @@ export class SudokuController {
   //===========================================================================================================================
   /**
    * Takes the cells of a sudoku table and tries to calculate and returnback.
-   * @param body Bounding boxes of the intersection
+   * @param body Sudoku grid
    * @returns HTTPReponse
    */
   @ApiOperation({ summary: 'Calaculates the sudoku table' })
   @ApiResponse({
     status: 200,
     description: 'Returns back the calculated Sudoko',
-    type: SudokuResponseDTO,
+    type: SudokuDTO,
   })
-  @ApiBody({ type: [SudokuRequestDTO] })
+  @ApiBody({ type: [SudokuDTO] })
   @Header('content-type', 'application/json')
-  @Post('iou')
+  @Post()
   @HttpCode(HttpStatus.OK)
   @Public()
   async sudoku(@Body() body: any): Promise<HttpResponse> {
-    const response: HttpResponse = await this.sudokuService.handleSudokuRequest(new SudokuRequestDTO(body));
+    const response: HttpResponse = await this.sudokuService.handleSudokuRequest(new SudokuDTO(body));
     return response;
   }
 }

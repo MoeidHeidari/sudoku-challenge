@@ -2,32 +2,35 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
+import { IsDefined, IsNotEmpty, IsNotEmptyObject, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDefined, IsNotEmpty } from 'class-validator';
 /**
  * List of allowed properties in this DTO
  */
 const allowedProperties = ['grid'];
 /**
- * Sudoku response DTO
+ * IOU request DTO
  */
-export class SudokuResponseDTO {
+export class SudokuDTO {
   /**
-   * Calculated Sudoku result value
+   * Procided Sudoku grid.
    */
   @IsDefined()
   @IsNotEmpty()
   @ApiProperty({
-    description: 'Calculated sudoku',
+    description: 'grid',
   })
   grid: number[][];
+
+
   /**
-   * Contructs the DTO based on the provided properties after validation success.
-   * @param properties list of allowed properties
+   * get user DTO constructor
+   * @param properties DTO properties
    */
   constructor(properties: any = {}) {
     Object.keys(properties).forEach((key: string) => {
       if (allowedProperties.includes(key)) this[key as keyof this] = properties[key];
     });
+  
   }
 }
