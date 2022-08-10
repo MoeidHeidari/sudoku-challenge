@@ -15,5 +15,6 @@
     },
     "include": ["./src/**/*.ts", "__test__/controllers/health.controller.spec.ts"],
     "exclude": ["node_modules"]
+    
   }
   
