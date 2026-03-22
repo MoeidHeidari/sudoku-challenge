@@ -1,0 +1,5 @@
+owner: moeidheidari
+name: NestJs starter
+description: A full starter project for nestjs http server
+category: backend
+tags: [typescript, nestjs, rest, mongo, docker]
