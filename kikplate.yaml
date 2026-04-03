@@ -1,6 +1,6 @@
 owner: myorg
 name: NestJs starter
-verification_token: 6d97c17c-cc9c-4f26-9acc-c380f9efaa37
+verification_token: 595b3980-35ff-4278-bf02-22f9f7b37bdc
 description: A full starter project for nestjs http server
 category: backend
 tags: [typescript, nestjs, rest, mongo, docker]
