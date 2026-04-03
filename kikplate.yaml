@@ -1,6 +1,6 @@
 owner: MoeidHeidari
 name: NestJs starter
-verification_token: 595b3980-35ff-4278-bf02-22f9f7b37bdc
+verification_token: b7e3f4e9-a2f1-49d4-b696-097011090832
 description: A full starter project for nestjs http server
 category: backend
 tags: [typescript, nestjs, rest, mongo, docker]
