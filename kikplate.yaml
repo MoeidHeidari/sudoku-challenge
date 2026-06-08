@@ -1,6 +1,6 @@
 owner: kikplate
 name: NestJs starter
-verification_token: a1037a73-3623-45dd-a5d3-f6f896e2c24b
+verification_token: d7d43e80-ee7a-4379-81ec-3bb435b88da1
 description: A full starter project for nestjs http server
 category: backend
 tags: [typescript, nestjs, rest, mongo, docker]
