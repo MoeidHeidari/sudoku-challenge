@@ -96,10 +96,19 @@ bash start.h -h
 
 ### Run without script
 
+Use Node.js 22 or later (`.nvmrc` selects Node.js 22).
+
 ```bash
 npm install
 npm start
 ```
+
+The Sudoku endpoint checks the request body with an `is-kit` guard before creating
+the DTO. It accepts a grid of numeric arrays without checking dimensions or Sudoku
+rules, and responds with HTTP 400 for an invalid shape. The DTO's existing
+`class-validator` decorators are still used for output validation.
+`SudokuService.handleSudokuRequest` expects callers to validate input before
+constructing its DTO; non-HTTP callers can reuse `isSudokuRequest` for this check.
 
 ---
 

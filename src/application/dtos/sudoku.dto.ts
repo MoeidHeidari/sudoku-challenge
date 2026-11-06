@@ -2,7 +2,7 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-import { IsDefined, IsNotEmpty, IsNotEmptyObject, ValidateNested } from 'class-validator';
+import { IsDefined, IsNotEmpty } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 /**
  * List of allowed properties in this DTO

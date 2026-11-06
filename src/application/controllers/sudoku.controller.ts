@@ -18,6 +18,9 @@ import { Public } from '../../domain/decorators';
 import { SudokuService } from '../../domain/services/sudoku.service';
 import { SudokuDTO } from '../dtos';
 import { ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { isSudokuRequest } from '../dtos/sudoku-request.guard';
+import { HttpResponseException } from '../../domain/exceptions';
+import { HttpResponseService } from '../../domain/services/common';
 /**
  * Sudoku controller
  */
@@ -28,7 +31,10 @@ export class SudokuController {
    * Sudoku controller class constructor
    * @param sudokuService Sudoku service
    */
-  constructor(private readonly sudokuService: SudokuService) {}
+  constructor(
+    private readonly sudokuService: SudokuService,
+    private readonly httpResponseService: HttpResponseService
+  ) {}
 
   //===========================================================================================================================
   /**
@@ -63,7 +69,14 @@ export class SudokuController {
   @Post()
   @HttpCode(HttpStatus.OK)
   @Public()
-  async sudoku(@Body() body: any): Promise<HttpResponse> {
+  async sudoku(@Body() body: unknown): Promise<HttpResponse> {
+    if (!isSudokuRequest(body)) {
+      throw new HttpResponseException(
+        this.httpResponseService.generate(HttpStatus.BAD_REQUEST, [
+          { property: 'grid', constraints: { isGrid: 'grid must be an array of arrays of numbers' } },
+        ])
+      );
+    }
     const response: HttpResponse = await this.sudokuService.handleSudokuRequest(new SudokuDTO(body));
     return response;
   }
