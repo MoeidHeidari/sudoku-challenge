@@ -33,8 +33,8 @@ export class SudokuService {
   ) {}
   //===========================================================================================
   /**
-   * Handles the Sudoku request
-   * @param sudokuTable sudokuTable
+   * Handles a Sudoku request whose input has already been validated by the caller.
+   * @param sudokuTable DTO constructed from a validated Sudoku request
    * @returns HTTPResponse
    */
   async handleSudokuRequest(sudokuTable: SudokuDTO): Promise<HttpResponse> {

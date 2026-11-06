@@ -54,8 +54,9 @@ describe('GRID endpoints (e2e)', () => {
       }
     );
 
-    it('accepts a numeric grid without imposing dimensions and ignores extra properties', async () => {
-      const response = await request.post('/api/v1/sudoku').send({ grid: [], extra: true }).expect(200);
+    it('solves a valid grid and ignores extra properties', async () => {
+      const response = await request.post('/api/v1/sudoku').send({ grid: TEST_GRID_2, extra: true }).expect(200);
+      expect(response.body.data.grid[0]).toEqual([1, 4, 6, 5, 2, 8, 7, 3, 9]);
       expect(response.body.data).not.toHaveProperty('extra');
     });
 

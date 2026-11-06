@@ -107,6 +107,8 @@ The Sudoku endpoint checks the request body with an `is-kit` guard before creati
 the DTO. It accepts a grid of numeric arrays without checking dimensions or Sudoku
 rules, and responds with HTTP 400 for an invalid shape. The DTO's existing
 `class-validator` decorators are still used for output validation.
+`SudokuService.handleSudokuRequest` expects callers to validate input before
+constructing its DTO; non-HTTP callers can reuse `isSudokuRequest` for this check.
 
 ---
 
