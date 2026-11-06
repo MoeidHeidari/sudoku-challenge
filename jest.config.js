@@ -2,17 +2,9 @@ module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'node',
     roots: ['./'],
-    transform: { '\\.ts$': ['ts-jest'] },
+    transform: { '\\.ts$': ['ts-jest', { tsconfig: { allowJs: true } }] },
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec|e2e-spec))\\.tsx?$',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-    globals: {
-      'ts-jest': {
-        tsconfig: {
-          // allow js in typescript
-          allowJs: true,
-        },
-      },
-    },
     coverageProvider: 'v8',
     collectCoverageFrom: [
       'src/**/*.ts',
@@ -32,4 +24,4 @@ module.exports = {
       },
     },
   };
-  
+

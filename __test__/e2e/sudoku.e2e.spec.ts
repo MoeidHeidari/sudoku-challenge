@@ -43,6 +43,22 @@ describe('GRID endpoints (e2e)', () => {
       return await request.post('/api/v1/sudoku').send().expect(400);
     });
 
+    it.each([{ grid: null }, { grid: [1, 2] }, { grid: [[1, '2']] }, { grid: {} }])(
+      'rejects an invalid grid before solving: %j',
+      async payload => {
+        const response = await request.post('/api/v1/sudoku').send(payload).expect(400);
+        expect(response.body).toMatchObject({
+          status: 400,
+          data: [{ property: 'grid', constraints: { isGrid: expect.any(String) } }],
+        });
+      }
+    );
+
+    it('accepts a numeric grid without imposing dimensions and ignores extra properties', async () => {
+      const response = await request.post('/api/v1/sudoku').send({ grid: [], extra: true }).expect(200);
+      expect(response.body.data).not.toHaveProperty('extra');
+    });
+
     it('should return 200 Success request', async () => {
       return await request.post('/api/v1/sudoku').send({ grid: TEST_GRID_1 }).expect(200);
     });
@@ -61,7 +77,7 @@ describe('GRID endpoints (e2e)', () => {
     });
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await app.close();
   });
 });

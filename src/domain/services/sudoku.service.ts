@@ -7,7 +7,7 @@ import { ConfigService } from '@nestjs/config';
 import { SudokuDTO } from '../../application/dtos';
 import { EnvObjects, SudokuOptions } from '../../infrastructure/config';
 import { HttpResponseException } from '../exceptions';
-import { processHttpError, validateDTO, validateOutputDTO } from '../helpers';
+import { processHttpError, validateOutputDTO } from '../helpers';
 import { HttpResponse } from '../interfaces';
 import { HttpResponseService, LoggerService } from './common';
 /**
@@ -39,7 +39,6 @@ export class SudokuService {
    */
   async handleSudokuRequest(sudokuTable: SudokuDTO): Promise<HttpResponse> {
     try {
-      await validateDTO(sudokuTable, this.httpResponseService);
       const calculatedGrid = await this.calculateSudoku(sudokuTable);
       const result = new SudokuDTO({ grid: calculatedGrid });
       await validateOutputDTO(result, this.logger);
